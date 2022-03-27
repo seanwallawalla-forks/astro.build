@@ -5,7 +5,7 @@ const config: AstroUserConfig = {
 		site: 'https://astro.build',
 		sitemap: true,
 	},
-	renderers: [],
+	integrations: [],
 	markdownOptions: {
 		render: [
 			'@astrojs/markdown-remark',
@@ -18,7 +18,6 @@ const config: AstroUserConfig = {
 					'rehype-slug',
 					['rehype-autolink-headings', { behavior: 'wrap' }],
 				],
-				syntaxHighlight: 'shiki',
 			},
 		],
 	},

@@ -28,14 +28,15 @@ const { wrapper: Wrapper = Fragment, meta, container = false, routeId } = Astro.
         </Fragment>
     </BaseHead>
 
-    <slot name="head" />
+    <!-- TODO: For some reason this breaks the page head.
+         See: https://github.com/withastro/astro/issues/2904 -->
+    <!-- <slot name="head" /> -->
 
     <script>
         document.body.classList.add('js');
     </script>
   </head>
   <body>
-    <Sprite.Provider>
         <slot name="banner" />
 
         <SkipLink />
@@ -49,7 +50,6 @@ const { wrapper: Wrapper = Fragment, meta, container = false, routeId } = Astro.
         </Wrapper>
 
         <slot name="footer" />
-    </Sprite.Provider>
 
     <script type="module" hoist>
         import "/src/scripts/defer.ts";
